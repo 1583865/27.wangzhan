@@ -1,0 +1,180 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul li,ol li{
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.header {
+	width: 100%;
+	height: 1000px;
+	/*background-color: lightblue;*/
+}
+.header .asid .nav{
+	width: 1000px;
+	height: 62px;
+	margin: 0 auto;
+	background-color: #fff;
+
+}
+.header .asid .nav span img{
+	margin: 20px 30px;
+	float: left;
+	
+}
+.header .asid .nav ul.left li{
+	float: left;
+	width: 80px;
+	height: 50px;
+	margin: 20px auto;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 50px;
+	text-align: center;
+	cursor:pointer;
+}
+.header .asid .nav ul.left li.active{
+	color: red;
+
+}
+
+.header .asid .nav ul.left i {
+	margin-left: 15px;
+
+}
+.header .asid .nav ul.left li span {
+	margin-right: 30px;
+}
+.header .asid .nav ul.right li {
+	float: right;
+	width: 60px;
+	height: 50px;
+	margin: 10px 0px;
+	font-size: 10px;
+	font-weight: normal;
+	line-height: 50px;
+	text-align: center;
+}
+
+
+/*轮播图*/
+
+.lunbo {
+	position: relative;
+	width: 1000px;
+	height: 500px;
+	margin: 50px auto;
+	margin-top: -10px;
+}
+.lunbo img {
+	width: 1000px;
+	height: 500px;
+}
+.lunbo .imgs ul li {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	display: none;
+
+}
+.lunbo .imgs ul li:nth-child(1) {
+	display: block;
+}
+.btns a{
+			position:absolute;
+			width:30px;
+			height:60px;
+			top:50%;
+			margin-top:-30px;
+			background-color:rgba(0,0,0,.5);
+			line-height:60px;
+			text-align:center;
+			text-decoration: none;
+			font-size:20px;
+			color:#fff;
+		}
+
+		.btns a:first-child{
+			left:10px;
+
+		}
+		.btns a:last-child{
+			right:10px;
+		}
+
+	  .circles{
+	  	position:absolute;
+	  	width:200px;
+	  	height:20px;
+	  	left:50%;
+	  	margin-left:-100px;
+	  	bottom:30px;
+	  }
+
+	  .circles ol{
+	  	width:210px;
+	  }
+	  .circles ol li{
+	  	float:left;
+	  	width:20px;
+	  	height:20px;
+	  	line-height:20px;
+	  	text-align:center;
+	  	margin-right:10px;
+	  	background-color:red;
+	  	border-radius:50%;
+		cursor:pointer;
+
+	  }
+	  .circles ol li.cur{
+	  	background-color:#fff;
+	  }
+
+
+	  /*图片列表*/
+.header .im  {
+	position: relative;
+	width: 1000px;
+	height: 500px;
+	margin: 50px auto;
+	
+
+}
+.header .im p {
+
+	width: 1000px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #12ac46;
+	margin-top: -39px;
+	font-weight: normal;
+	font-size: 20px;
+	padding-left: 10px;
+	 background: linear-gradient(to left, red 0%,green 100%);
+
+}
+.header .im .clearfix .im-li img{
+	width: 160px;
+	height: 200px;
+	margin-bottom: 5px;
+	margin-left: 3px;
+}
+.header .im .clearfix .im-li img:hover {
+	transition: transform 1.6s;
+	transform: scale(2.0);
+}
+.header .im .p-le {
+	margin-top: 10px;
+} 
+
+.header .im .activee {
+	display: block;
+}
+.header .im ul{
+	display: none;
+}

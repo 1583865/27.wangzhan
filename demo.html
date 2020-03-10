@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="header">
+		<div class="asid">
+			<div class="nav">
+				<span>
+					<img src="./img/logo.jpg">
+				</span>
+				<ul class="left" id="left">
+					<li class="active">首页</li>
+					<li>雪景图</li>
+					<li>福卡</li>
+					<li>风景图</li>
+					<li>植物</li>
+					<li><span>农村</span></li>
+				</ul>
+				<ul class="right" id="right">
+					<li>注册</li>
+					<li>登录</li>
+				</ul>
+			</div>
+		</div>
+	
+	<div class="lunbo" id="lunbo">
+		<div class="imgs" id="imgs">
+			<ul>
+				<li><img src="./img/1.jpg"></li>
+				<li><img src="./img/2.jpg"></li>
+				<li><img src="./img/3.jpg"></li>
+				<li><img src="./img/4.jpg"></li>
+				<li><img src="./img/5.jpg"></li>
+				<li><img src="./img/6.jpg"></li>
+			</ul>
+		</div>
+		<div class="btns">
+			<a href="javascript:void(0)" id="leftBtn">&lt;</a>
+			<a href="javascript:void(0)" id="rightBtn">&gt;</a>
+		</div>
+		<div class="circles" id="circles">
+				<ol>
+					<li class="cur">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+				</ol>
+			</div>
+         </div>
+	<div class="im" id="lists">
+		<p>风景图</p>
+		<ul class="clearfix activee">
+			<li class="im-li">
+				<img src="./img/9.jpg">
+				<img src="./img/10.jpg">
+				<img src="./img/20.jpg">
+			</li>
+		</ul>
+		 <div class="im" id="lists">
+		<ul class="clearfix">
+			<li class="im-li">
+				<img src="./img/1.jpeg">
+				<img src="./img/2.jpeg">
+			</li>
+		</ul>
+    </div>
+    </div>
+   
+
+	
+	</div>
+
+
+
+
+	
+
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		// 轮播图
+var $lunbo=$("#lunbo");
+var $leftBtn = $("#leftBtn");
+var $rightBtn = $("#rightBtn");
+var $imgs = $("#imgs ul li");
+var length = $imgs.length;
+var $circles = $("#circles ol li");
+
+var idx = 0;
+var timer = setInterval(change, 3000)
+
+$lunbo.mouseenter(function() {
+	clearInterval(timer);
+});
+$lunbo.mouseleave(function() {
+	clearInterval(timer);
+	timer= setInterval(change,3000)
+});
+
+
+
+// 左击
+$rightBtn.click(change);
+function change() {
+	if($imgs.is(":animated")) {
+		return;
+	}
+	$imgs.eq(idx).fadeOut(600);
+	idx++;
+	if(idx>length-1) {
+		idx= 0;
+
+	}
+	$imgs.eq(idx).fadeIn(600);
+	$circles.eq(idx).addClass("cur").siblings().removeClass("cur");
+}
+// 右击
+$("#leftBtn").click(function() {
+	if(!$imgs.is(":animated")) {
+		$imgs.eq(idx).fadeOut(600);
+		idx--;
+		if(idx<0) {
+			idx = length-1;
+		}
+		$imgs.eq(idx).fadeIn(600);
+
+		$circles.eq(idx).addClass("cur").siblings().removeClass("cur");
+	}
+})
+
+// 小圆点事件
+$circles.mouseenter(function() {
+	$imgs.eq(idx).stop(true).fadeOut(600);
+	idx=$(this).index();
+	$imgs.eq(idx).stop(true).fadeIn(600);
+	$(this).addClass("cur").siblings().removeClass("cur");
+});
+
+
+
+	</script>
+
+</body>
+</html>
